@@ -1,0 +1,6 @@
+FROM java:8
+VOLUME /tmp
+ADD springboot-elastic.jar /app.jar
+RUN bash -c 'touch /app.jar'
+EXPOSE 6666
+CMD ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
